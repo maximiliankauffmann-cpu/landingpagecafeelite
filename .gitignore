@@ -3,3 +3,4 @@ server/.env
 server/google-service-account.json
 cafe.json
 .DS_Store
+.vercel
