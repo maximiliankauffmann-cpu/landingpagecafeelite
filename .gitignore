@@ -1,0 +1,5 @@
+node_modules/
+server/.env
+server/google-service-account.json
+cafe.json
+.DS_Store
