@@ -209,6 +209,144 @@
     /* Transitions */
     [data-de], [data-en] { transition: opacity 0.2s; }
 
+    /* ── Hamburger ── */
+    .nav-hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 36px; height: 36px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .nav-hamburger span { display: block; width: 22px; height: 1.5px; background: #faf7f2; transition: all 0.3s; transform-origin: center; }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+    /* Mobile nav drawer */
+    .nav-drawer { display: none; position: fixed; inset: 0; z-index: 998; background: rgba(13,9,5,0.97); backdrop-filter: blur(16px); flex-direction: column; align-items: center; justify-content: center; gap: 36px; }
+    .nav-drawer.open { display: flex; }
+    .nav-drawer a { font-size: 28px; font-family: 'Cormorant Garamond', serif; font-weight: 600; color: rgba(250,247,242,0.85); text-decoration: none; letter-spacing: 0.02em; transition: color 0.2s; }
+    .nav-drawer a:hover { color: #c8a882; }
+    .nav-drawer .drawer-cta { margin-top: 12px; padding: 14px 36px; background: rgba(200,168,130,0.15); border: 1px solid rgba(200,168,130,0.4); font-family: 'Inter', sans-serif; font-size: 11px; letter-spacing: 0.14em; color: #c8a882; text-transform: uppercase; }
+    .nav-drawer .drawer-lang { display: flex; border: 1px solid rgba(200,168,130,0.5); overflow: hidden; margin-top: 8px; }
+    .nav-drawer .drawer-lang button { padding: 10px 20px; font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; border: none; cursor: pointer; transition: all 0.2s; background: transparent; color: rgba(250,247,242,0.7); }
+    .nav-drawer .drawer-lang button.active { background: #c8a882; color: #1a0f0a; }
+
+    /* ── Responsive: Tablet ── */
+    @media (max-width: 1100px) {
+      nav { padding: 24px 32px; }
+      .nav-links { gap: 28px; }
+      .hero-content { padding: 0 60px 100px; }
+      .hero-strip { padding: 0 60px; gap: 36px; }
+      .ritual-left { flex: 0 0 240px; }
+      .ritual-center { flex: 0 0 340px; }
+      .about-left { flex: 0 0 560px; padding: 80px 60px 80px 80px; }
+      .about-headline { font-size: clamp(40px, 4.5vw, 60px); }
+      .gallery-header { padding: 60px 80px 40px; }
+      .gallery-headline { font-size: 52px; }
+      #menu { padding: 100px 80px; }
+      .menu-headline { font-size: 56px; }
+      #team { padding: 100px 60px 120px; }
+      .team-headline { font-size: 56px; }
+      .team-grid { gap: 36px; }
+      .team-card { flex: 0 0 280px; }
+      .team-portrait { width: 280px; height: 350px; }
+      .visit-left { flex: 0 0 480px; padding: 80px 48px 80px 80px; }
+      .visit-headline { font-size: 52px; }
+      footer { padding: 60px 80px 48px; }
+      .footer-grid { gap: 40px; }
+    }
+
+    /* ── Responsive: Mobile ── */
+    @media (max-width: 768px) {
+      /* Nav */
+      nav { padding: 20px 24px; }
+      .nav-links { display: none; }
+      .lang-switch { display: none; }
+      .nav-cta { display: none; }
+      .nav-hamburger { display: flex; }
+
+      /* Hero */
+      #hero { min-height: 100svh; }
+      .hero-content { padding: 0 24px 80px; }
+      .hero-headline { font-size: clamp(48px, 11vw, 72px); }
+      .hero-headline .sub { font-size: clamp(30px, 7vw, 46px); }
+      .hero-actions { flex-direction: column; align-items: flex-start; gap: 20px; }
+      .hero-strip { padding: 0 24px; gap: 20px; overflow-x: auto; flex-wrap: nowrap; white-space: nowrap; -webkit-overflow-scrolling: touch; }
+      .hero-strip p { flex-shrink: 0; }
+
+      /* Ritual */
+      #ritual { flex-direction: column; }
+      .ritual-left { display: none; }
+      .ritual-center { flex: none; width: 100%; padding: 48px 24px 32px; justify-content: center; }
+      .phone-frame { width: 220px; height: 440px; }
+      .ritual-right { padding: 32px 24px 56px; }
+      .ritual-headline { font-size: 44px; }
+      .ritual-bg { display: none; }
+      .stats { gap: 28px; }
+      .stat-num { font-size: 36px; }
+
+      /* About */
+      #about { flex-direction: column-reverse; }
+      .about-left { flex: none; width: 100%; padding: 56px 24px 48px; }
+      .about-headline { font-size: clamp(38px, 9vw, 56px); }
+      .about-right { min-height: 300px; width: 100%; }
+      .about-right::after { background: linear-gradient(to bottom, #faf7f2 0%, transparent 30%); }
+      .about-stats { gap: 28px; }
+      .about-stat-num { font-size: 40px; }
+
+      /* Gallery */
+      .gallery-header { padding: 48px 24px 32px; flex-direction: column; align-items: flex-start; gap: 16px; }
+      .gallery-headline { font-size: 44px; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+      .gallery-grid .main { grid-row: auto; height: 280px; }
+      .gallery-item { height: 180px; }
+      .gallery-item.main { height: 280px; }
+
+      /* Quote */
+      .quote-content { padding: 64px 24px; }
+      .quote-text { font-size: clamp(28px, 7vw, 40px); margin: 36px 0; }
+
+      /* Menu */
+      #menu { padding: 72px 24px; }
+      .menu-headline { font-size: 48px; }
+      .menu-grid { grid-template-columns: 1fr; gap: 48px; }
+
+      /* Team */
+      #team { padding: 72px 24px 88px; }
+      .team-headline { font-size: 48px; }
+      .team-grid { flex-direction: column; align-items: center; gap: 48px; }
+      .team-card { flex: none; width: 100%; max-width: 320px; }
+      .team-card:nth-child(2) { margin-top: 0; }
+      .team-portrait { width: 240px; height: 300px; }
+
+      /* Visit */
+      #visit { flex-direction: column; }
+      .visit-left { flex: none; width: 100%; padding: 64px 24px 48px; }
+      .visit-headline { font-size: 48px; margin-bottom: 40px; }
+      .visit-right { padding: 48px 24px 64px; }
+      .visit-right::before { display: none; }
+      .res-headline { font-size: 34px; }
+      .form-row { grid-template-columns: 1fr; }
+      .form { max-width: 100%; }
+
+      /* Map */
+      #map { padding: 56px 24px 0; }
+      .map-header { flex-direction: column; align-items: flex-start; gap: 20px; margin-bottom: 32px; }
+      .map-headline { font-size: 40px; }
+      .map-aside { text-align: left; }
+      .map-embed { height: 340px; }
+
+      /* Footer */
+      footer { padding: 56px 24px 40px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+      .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+    }
+
+    /* ── Responsive: Small mobile ── */
+    @media (max-width: 420px) {
+      .hero-headline { font-size: clamp(40px, 12vw, 60px); }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .gallery-grid .main { height: 260px; }
+      .gallery-item { height: 200px; }
+      .gallery-item.main { height: 260px; }
+      .team-portrait { width: 200px; height: 260px; }
+    }
+
     /* ── Slot Picker ── */
     .slot-btn {
       padding: 9px 14px; border: 1px solid rgba(200,168,130,0.5);
@@ -248,8 +386,25 @@
       <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
     </div>
     <a href="#visit" class="nav-cta" data-de="Tisch reservieren" data-en="Book a table">Tisch reservieren</a>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu" onclick="toggleDrawer()">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
+
+<!-- Mobile nav drawer -->
+<div class="nav-drawer" id="nav-drawer">
+  <a href="#about"   data-de="Über uns"   data-en="About"   onclick="closeDrawer()">Über uns</a>
+  <a href="#menu"    data-de="Karte"       data-en="Menu"    onclick="closeDrawer()">Karte</a>
+  <a href="#team"    data-de="Team"        data-en="Team"    onclick="closeDrawer()">Team</a>
+  <a href="#gallery" data-de="Galerie"     data-en="Gallery" onclick="closeDrawer()">Galerie</a>
+  <a href="#visit"   data-de="Kontakt"     data-en="Contact" onclick="closeDrawer()">Kontakt</a>
+  <a href="#visit" class="drawer-cta" data-de="Tisch reservieren" data-en="Book a table" onclick="closeDrawer()">Tisch reservieren</a>
+  <div class="drawer-lang">
+    <button id="drawer-btn-de" class="active" onclick="setLang('de');document.getElementById('drawer-btn-de').classList.add('active');document.getElementById('drawer-btn-en').classList.remove('active');">DE</button>
+    <button id="drawer-btn-en" onclick="setLang('en');document.getElementById('drawer-btn-en').classList.add('active');document.getElementById('drawer-btn-de').classList.remove('active');">EN</button>
+  </div>
+</div>
 
 <!-- ═══════════════ HERO ═══════════════ -->
 <section id="hero">
@@ -538,6 +693,20 @@
 </footer>
 
 <script>
+  // ── Hamburger / mobile drawer ──
+  function toggleDrawer() {
+    const drawer = document.getElementById('nav-drawer');
+    const btn = document.getElementById('nav-hamburger');
+    const open = drawer.classList.toggle('open');
+    btn.classList.toggle('open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+  function closeDrawer() {
+    document.getElementById('nav-drawer').classList.remove('open');
+    document.getElementById('nav-hamburger').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
   // ── Nav scroll effect ──
   const nav = document.getElementById('main-nav');
   window.addEventListener('scroll', () => {
