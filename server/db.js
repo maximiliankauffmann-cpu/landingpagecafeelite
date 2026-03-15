@@ -50,12 +50,12 @@ function updateCalendarEventId(id, calendarEventId) {
   if (r) { r.calendar_event_id = calendarEventId; write(db); }
 }
 
-// Count tables booked that overlap with the given time slot
+// Return number of tables booked in slots that overlap with the given time window
 function getBookedTablesCount(date, time, endTime) {
   return read().reservations
     .filter(r => r.date === date && r.status !== 'cancelled')
     .filter(r => r.time < endTime && r.end_time > time)
-    .reduce((sum, r) => sum + r.tables_needed, 0);
+    .reduce((sum, r) => sum + (r.tables_needed || 0), 0);
 }
 
 function getStats() {

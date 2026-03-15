@@ -1,5 +1,8 @@
 module.exports = {
-  TOTAL_TABLES: 8,           // change to your actual number of tables
+  // Define each table with a unique id and how many seats it has.
+  // Example: 5 tables of 8 seats + 3 tables of 2 seats
+  TOTAL_TABLES: 8,
+
   SLOT_DURATION_MINUTES: 90, // how long each reservation holds a table
 
   OPENING_HOURS: {
