@@ -18,10 +18,11 @@ function isWithinOpeningHours(date, time) {
   if (!hours) return false;
 
   const requested = toMinutes(time);
-  const open      = toMinutes(hours.open);
-  const lastSlot  = toMinutes(hours.close) - SLOT_DURATION_MINUTES;
-
-  return requested >= open && requested <= lastSlot;
+  return hours.windows.some(w => {
+    const open     = toMinutes(w.open);
+    const lastSlot = toMinutes(w.close) - SLOT_DURATION_MINUTES;
+    return requested >= open && requested <= lastSlot;
+  });
 }
 
 function getAvailableTables(date, time) {
@@ -38,17 +39,29 @@ function getSlotsForDate(date) {
   const hours     = OPENING_HOURS[dayOfWeek];
   if (!hours) return { open: false, slots: [] };
 
-  const openMin     = toMinutes(hours.open);
-  const lastSlotMin = toMinutes(hours.close) - SLOT_DURATION_MINUTES;
-
   const slots = [];
-  for (let t = openMin; t <= lastSlotMin; t += SLOT_INTERVAL_MINUTES) {
-    const time       = toTimeStr(t);
-    const tablesLeft = getAvailableTables(date, time);
-    slots.push({ time, available: tablesLeft > 0, tablesLeft, maxPartySize: tablesLeft * 4 });
+  for (const w of hours.windows) {
+    const openMin     = toMinutes(w.open);
+    const lastSlotMin = toMinutes(w.close) - SLOT_DURATION_MINUTES;
+    for (let t = openMin; t <= lastSlotMin; t += SLOT_INTERVAL_MINUTES) {
+      const time       = toTimeStr(t);
+      const tablesLeft = getAvailableTables(date, time);
+      slots.push({ time, available: tablesLeft > 0, tablesLeft, maxPartySize: tablesLeft * 4 });
+    }
   }
 
-  return { open: true, hours: { open: hours.open, close: hours.close }, slots };
+  // Build a display string, e.g. "09:00 – 13:00 & 15:00 – 19:00"
+  const display = hours.windows.map(w => `${w.open} – ${w.close}`).join(' & ');
+
+  return {
+    open: true,
+    hours: {
+      open:    hours.windows[0].open,
+      close:   hours.windows[hours.windows.length - 1].close,
+      display,
+    },
+    slots,
+  };
 }
 
 module.exports = { isWithinOpeningHours, getAvailableTables, tablesNeeded, getSlotsForDate, toTimeStr };
