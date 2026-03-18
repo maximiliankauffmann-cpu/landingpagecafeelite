@@ -207,7 +207,7 @@
     .footer-bottom p { font-size: 12px; color: rgba(139,115,85,0.6); letter-spacing: 0.04em; }
 
     /* Transitions */
-    [data-de], [data-en] { transition: opacity 0.2s; }
+    [data-de], [data-en], [data-ru] { transition: opacity 0.2s; }
 
     /* ── Hamburger ── */
     .nav-hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 36px; height: 36px; cursor: pointer; background: none; border: none; padding: 4px; }
@@ -374,18 +374,19 @@
 <nav id="main-nav">
   <a href="#" class="nav-logo">Café Elite</a>
   <div class="nav-links">
-    <a href="#about"   data-de="Über uns"   data-en="About">Über uns</a>
-    <a href="#menu"    data-de="Karte"       data-en="Menu">Karte</a>
-    <a href="#team"    data-de="Team"        data-en="Team">Team</a>
-    <a href="#gallery" data-de="Galerie"     data-en="Gallery">Galerie</a>
-    <a href="#visit"   data-de="Kontakt"     data-en="Contact">Kontakt</a>
+    <a href="#about"   data-de="Über uns"   data-en="About"   data-ru="О нас">Über uns</a>
+    <a href="#menu"    data-de="Karte"       data-en="Menu"    data-ru="Меню">Karte</a>
+    <a href="#team"    data-de="Team"        data-en="Team"    data-ru="Команда">Team</a>
+    <a href="#gallery" data-de="Galerie"     data-en="Gallery" data-ru="Галерея">Galerie</a>
+    <a href="#visit"   data-de="Kontakt"     data-en="Contact" data-ru="Контакт">Kontakt</a>
   </div>
   <div class="nav-right">
     <div class="lang-switch">
       <button class="lang-btn active" id="btn-de" onclick="setLang('de')">DE</button>
       <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" id="btn-ru" onclick="setLang('ru')">RU</button>
     </div>
-    <a href="#visit" class="nav-cta" data-de="Tisch reservieren" data-en="Book a table">Tisch reservieren</a>
+    <a href="#visit" class="nav-cta" data-de="Tisch reservieren" data-en="Book a table" data-ru="Забронировать стол">Tisch reservieren</a>
     <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu" onclick="toggleDrawer()">
       <span></span><span></span><span></span>
     </button>
@@ -394,15 +395,16 @@
 
 <!-- Mobile nav drawer -->
 <div class="nav-drawer" id="nav-drawer">
-  <a href="#about"   data-de="Über uns"   data-en="About"   onclick="closeDrawer()">Über uns</a>
-  <a href="#menu"    data-de="Karte"       data-en="Menu"    onclick="closeDrawer()">Karte</a>
-  <a href="#team"    data-de="Team"        data-en="Team"    onclick="closeDrawer()">Team</a>
-  <a href="#gallery" data-de="Galerie"     data-en="Gallery" onclick="closeDrawer()">Galerie</a>
-  <a href="#visit"   data-de="Kontakt"     data-en="Contact" onclick="closeDrawer()">Kontakt</a>
-  <a href="#visit" class="drawer-cta" data-de="Tisch reservieren" data-en="Book a table" onclick="closeDrawer()">Tisch reservieren</a>
+  <a href="#about"   data-de="Über uns"   data-en="About"   data-ru="О нас"      onclick="closeDrawer()">Über uns</a>
+  <a href="#menu"    data-de="Karte"       data-en="Menu"    data-ru="Меню"       onclick="closeDrawer()">Karte</a>
+  <a href="#team"    data-de="Team"        data-en="Team"    data-ru="Команда"    onclick="closeDrawer()">Team</a>
+  <a href="#gallery" data-de="Galerie"     data-en="Gallery" data-ru="Галерея"   onclick="closeDrawer()">Galerie</a>
+  <a href="#visit"   data-de="Kontakt"     data-en="Contact" data-ru="Контакт"   onclick="closeDrawer()">Kontakt</a>
+  <a href="#visit" class="drawer-cta" data-de="Tisch reservieren" data-en="Book a table" data-ru="Забронировать стол" onclick="closeDrawer()">Tisch reservieren</a>
   <div class="drawer-lang">
-    <button id="drawer-btn-de" class="active" onclick="setLang('de');document.getElementById('drawer-btn-de').classList.add('active');document.getElementById('drawer-btn-en').classList.remove('active');">DE</button>
-    <button id="drawer-btn-en" onclick="setLang('en');document.getElementById('drawer-btn-en').classList.add('active');document.getElementById('drawer-btn-de').classList.remove('active');">EN</button>
+    <button id="drawer-btn-de" class="active" onclick="setLang('de')">DE</button>
+    <button id="drawer-btn-en" onclick="setLang('en')">EN</button>
+    <button id="drawer-btn-ru" onclick="setLang('ru')">RU</button>
   </div>
 </div>
 
@@ -413,23 +415,23 @@
   </video>
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <p class="hero-eyebrow" data-de="Mosbach · Seit 2019" data-en="Mosbach · Since 2019">Mosbach · Seit 2019</p>
+    <p class="hero-eyebrow" data-de="Mosbach · Seit 2019" data-en="Mosbach · Since 2019" data-ru="Мосбах · С 2019 года">Mosbach · Seit 2019</p>
     <h1 class="hero-headline">
-      <span data-de="Außergewöhnlicher" data-en="Crafting">Außergewöhnlicher</span><br>
-      <em data-de="Kaffee." data-en="extraordinary">Kaffee.</em><br>
-      <span class="sub" data-de="Meisterhaft zubereitet." data-en="coffee.">Meisterhaft zubereitet.</span>
+      <span data-de="Außergewöhnlicher" data-en="Crafting" data-ru="Исключительный">Außergewöhnlicher</span><br>
+      <em data-de="Kaffee." data-en="extraordinary" data-ru="Кофе.">Kaffee.</em><br>
+      <span class="sub" data-de="Meisterhaft zubereitet." data-en="coffee." data-ru="Мастерски приготовленный.">Meisterhaft zubereitet.</span>
     </h1>
     <div class="hero-actions">
-      <a href="#visit" class="btn-primary" data-de="Tisch reservieren" data-en="Reserve a table">Tisch reservieren</a>
+      <a href="#visit" class="btn-primary" data-de="Tisch reservieren" data-en="Reserve a table" data-ru="Забронировать стол">Tisch reservieren</a>
       <div class="hero-link">
-        <a href="#menu" data-de="Unsere Karte entdecken" data-en="Explore our menu">Unsere Karte entdecken</a>
+        <a href="#menu" data-de="Unsere Karte entdecken" data-en="Explore our menu" data-ru="Открыть наше меню">Unsere Karte entdecken</a>
       </div>
     </div>
   </div>
   <div class="hero-strip">
     <p>Gartenweg 20, 74821 Mosbach</p>
     <p>06261 8465820</p>
-    <p data-de="Mo–Fr 7:30–18:00 · Sa 8:00–17:00 · So 9:00–15:00" data-en="Mon–Fri 7:30–18:00 · Sat 8:00–17:00 · Sun 9:00–15:00">Mo–Fr 7:30–18:00 · Sa 8:00–17:00 · So 9:00–15:00</p>
+    <p data-de="Mo–Fr 7:30–18:00 · Sa 8:00–17:00 · So 9:00–15:00" data-en="Mon–Fri 7:30–18:00 · Sat 8:00–17:00 · Sun 9:00–15:00" data-ru="Пн–Пт 7:30–18:00 · Сб 8:00–17:00 · Вс 9:00–15:00">Mo–Fr 7:30–18:00 · Sa 8:00–17:00 · So 9:00–15:00</p>
   </div>
 </section>
 
@@ -446,7 +448,7 @@
         <div class="phone-notch"></div>
         <div class="phone-caption">
           <p>@cafe.elite</p>
-          <p data-de="Folgen Sie uns" data-en="Follow our story">Folgen Sie uns</p>
+          <p data-de="Folgen Sie uns" data-en="Follow our story" data-ru="Следите за нами">Folgen Sie uns</p>
         </div>
       </div>
     </div>
@@ -454,15 +456,15 @@
   <div class="ritual-right">
     <div class="ritual-bg" style="background-image:url('assets/stock-beans2.jpg')"></div>
     <div class="ritual-content">
-      <p class="section-label" data-de="Das Ritual" data-en="The Ritual">Das Ritual</p>
-      <h2 class="ritual-headline" data-de="Die Kunst des<br><em>perfekten Kaffees.</em>" data-en="The art of<br><em>perfect coffee.</em>">Die Kunst des<br><em>perfekten Kaffees.</em></h2>
-      <p class="ritual-body" data-de="Vom ersten Mahlen bis zum letzten Aufguss — jeder Schritt ist ein bewusster Akt des Handwerks. Erleben Sie das Ritual in Echtzeit." data-en="From the first grind to the final pour — every step is a deliberate act of craft. Watch the ritual unfold in real time.">Vom ersten Mahlen bis zum letzten Aufguss — jeder Schritt ist ein bewusster Akt des Handwerks. Erleben Sie das Ritual in Echtzeit.</p>
+      <p class="section-label" data-de="Das Ritual" data-en="The Ritual" data-ru="Ритуал">Das Ritual</p>
+      <h2 class="ritual-headline" data-de="Die Kunst des<br><em>perfekten Kaffees.</em>" data-en="The art of<br><em>perfect coffee.</em>" data-ru="Искусство<br><em>идеального кофе.</em>">Die Kunst des<br><em>perfekten Kaffees.</em></h2>
+      <p class="ritual-body" data-de="Vom ersten Mahlen bis zum letzten Aufguss — jeder Schritt ist ein bewusster Akt des Handwerks. Erleben Sie das Ritual in Echtzeit." data-en="From the first grind to the final pour — every step is a deliberate act of craft. Watch the ritual unfold in real time." data-ru="От первого помола до последней заварки — каждый шаг — это осознанный акт мастерства. Наблюдайте за ритуалом в реальном времени.">Vom ersten Mahlen bis zum letzten Aufguss — jeder Schritt ist ein bewusster Akt des Handwerks. Erleben Sie das Ritual in Echtzeit.</p>
       <div class="stats">
-        <div><div class="stat-num">28s</div><div class="stat-label" data-de="Extraktionszeit" data-en="Pull time">Extraktionszeit</div></div>
+        <div><div class="stat-num">28s</div><div class="stat-label" data-de="Extraktionszeit" data-en="Pull time" data-ru="Время экстракции">Extraktionszeit</div></div>
         <div class="stat-divider"></div>
-        <div><div class="stat-num">93°</div><div class="stat-label" data-de="Brühtemperatur" data-en="Brew temp">Brühtemperatur</div></div>
+        <div><div class="stat-num">93°</div><div class="stat-label" data-de="Brühtemperatur" data-en="Brew temp" data-ru="Температура заварки">Brühtemperatur</div></div>
         <div class="stat-divider"></div>
-        <div><div class="stat-num">1:2</div><div class="stat-label" data-de="Verhältnis" data-en="Ratio">Verhältnis</div></div>
+        <div><div class="stat-num">1:2</div><div class="stat-label" data-de="Verhältnis" data-en="Ratio" data-ru="Соотношение">Verhältnis</div></div>
       </div>
     </div>
   </div>
@@ -471,14 +473,14 @@
 <!-- ═══════════════ ABOUT ═══════════════ -->
 <section id="about">
   <div class="about-left">
-    <p class="about-label" data-de="Unsere Geschichte" data-en="Our Story">Unsere Geschichte</p>
-    <h2 class="about-headline" data-de="Wo jede Tasse<br>eine Geschichte erzählt." data-en="Where every cup<br>tells a story.">Wo jede Tasse<br>eine Geschichte erzählt.</h2>
-    <p class="about-body" data-de="Das Café Elite entstand aus einer einfachen Leidenschaft: die perfekte Tasse zu finden. Im Herzen von Mosbach beschaffen wir Single-Origin-Bohnen von kleinen Farmen in Äthiopien, Kolumbien und Guatemala — auf Bestellung geröstet, mit Hingabe gebrüht." data-en="Café Elite was born from a simple obsession: finding the perfect cup. Nestled in the heart of Mosbach, we source single-origin beans from small farms across Ethiopia, Colombia, and Guatemala — roasted to order, brewed with intention.">Das Café Elite entstand aus einer einfachen Leidenschaft: die perfekte Tasse zu finden. Im Herzen von Mosbach beschaffen wir Single-Origin-Bohnen von kleinen Farmen in Äthiopien, Kolumbien und Guatemala — auf Bestellung geröstet, mit Hingabe gebrüht.</p>
-    <p class="about-body" data-de="Jedes Detail hier ist bewusst gewählt. Das Licht durch unsere Fenster. Das leise Summen der Mühle. Der Moment, in dem Dampf von einem frisch gezogenen Espresso aufsteigt. Das ist unser Handwerk — und wir laden Sie ein, es zu genießen." data-en="Every detail here is deliberate. The light through our windows. The quiet hum of the grinder. The moment steam lifts from a freshly pulled shot. This is our craft, and we invite you to savour it.">Jedes Detail hier ist bewusst gewählt. Das Licht durch unsere Fenster. Das leise Summen der Mühle. Der Moment, in dem Dampf von einem frisch gezogenen Espresso aufsteigt. Das ist unser Handwerk — und wir laden Sie ein, es zu genießen.</p>
+    <p class="about-label" data-de="Unsere Geschichte" data-en="Our Story" data-ru="Наша история">Unsere Geschichte</p>
+    <h2 class="about-headline" data-de="Wo jede Tasse<br>eine Geschichte erzählt." data-en="Where every cup<br>tells a story." data-ru="Где каждая чашка<br>рассказывает историю.">Wo jede Tasse<br>eine Geschichte erzählt.</h2>
+    <p class="about-body" data-de="Das Café Elite entstand aus einer einfachen Leidenschaft: die perfekte Tasse zu finden. Im Herzen von Mosbach beschaffen wir Single-Origin-Bohnen von kleinen Farmen in Äthiopien, Kolumbien und Guatemala — auf Bestellung geröstet, mit Hingabe gebrüht." data-en="Café Elite was born from a simple obsession: finding the perfect cup. Nestled in the heart of Mosbach, we source single-origin beans from small farms across Ethiopia, Colombia, and Guatemala — roasted to order, brewed with intention." data-ru="Кафе Elite родилось из простой страсти: найти идеальную чашку. В самом сердце Мосбаха мы закупаем зёрна из единственного источника с небольших ферм в Эфиопии, Колумбии и Гватемале — обжаренные под заказ, приготовленные с душой.">Das Café Elite entstand aus einer einfachen Leidenschaft: die perfekte Tasse zu finden. Im Herzen von Mosbach beschaffen wir Single-Origin-Bohnen von kleinen Farmen in Äthiopien, Kolumbien und Guatemala — auf Bestellung geröstet, mit Hingabe gebrüht.</p>
+    <p class="about-body" data-de="Jedes Detail hier ist bewusst gewählt. Das Licht durch unsere Fenster. Das leise Summen der Mühle. Der Moment, in dem Dampf von einem frisch gezogenen Espresso aufsteigt. Das ist unser Handwerk — und wir laden Sie ein, es zu genießen." data-en="Every detail here is deliberate. The light through our windows. The quiet hum of the grinder. The moment steam lifts from a freshly pulled shot. This is our craft, and we invite you to savour it." data-ru="Каждая деталь здесь выбрана намеренно. Свет через наши окна. Тихое жужжание кофемолки. Момент, когда пар поднимается над свежесваренным эспрессо. Это наше ремесло — и мы приглашаем вас насладиться им.">Jedes Detail hier ist bewusst gewählt. Das Licht durch unsere Fenster. Das leise Summen der Mühle. Der Moment, in dem Dampf von einem frisch gezogenen Espresso aufsteigt. Das ist unser Handwerk — und wir laden Sie ein, es zu genießen.</p>
     <div class="about-stats">
-      <div><div class="about-stat-num">12</div><div class="about-stat-label" data-de="Herkunftsländer" data-en="Origins sourced">Herkunftsländer</div></div>
-      <div><div class="about-stat-num">2019</div><div class="about-stat-label" data-de="Gegründet" data-en="Founded">Gegründet</div></div>
-      <div><div class="about-stat-num">∞</div><div class="about-stat-label" data-de="Zubereitete Tassen" data-en="Cups crafted">Zubereitete Tassen</div></div>
+      <div><div class="about-stat-num">12</div><div class="about-stat-label" data-de="Herkunftsländer" data-en="Origins sourced" data-ru="Стран происхождения">Herkunftsländer</div></div>
+      <div><div class="about-stat-num">2019</div><div class="about-stat-label" data-de="Gegründet" data-en="Founded" data-ru="Основано">Gegründet</div></div>
+      <div><div class="about-stat-num">∞</div><div class="about-stat-label" data-de="Zubereitete Tassen" data-en="Cups crafted" data-ru="Приготовленных чашек">Zubereitete Tassen</div></div>
     </div>
   </div>
   <div class="about-right">
@@ -490,10 +492,10 @@
 <section id="gallery">
   <div class="gallery-header">
     <div>
-      <p class="section-label" data-de="Galerie" data-en="Gallery">Galerie</p>
-      <h2 class="gallery-headline" data-de="Die Kunst des Kaffees." data-en="The art of coffee.">Die Kunst des Kaffees.</h2>
+      <p class="section-label" data-de="Galerie" data-en="Gallery" data-ru="Галерея">Galerie</p>
+      <h2 class="gallery-headline" data-de="Die Kunst des Kaffees." data-en="The art of coffee." data-ru="Искусство кофе.">Die Kunst des Kaffees.</h2>
     </div>
-    <p class="gallery-desc" data-de="Jede Aufnahme fängt einen Moment des Handwerks ein — den Dampf, den Aufguss, das stille Ritual, das jeden Besuch im Café Elite ausmacht." data-en="Each photograph captures a moment of craft — the steam, the pour, the quiet ritual that defines every visit to Café Elite.">Jede Aufnahme fängt einen Moment des Handwerks ein — den Dampf, den Aufguss, das stille Ritual, das jeden Besuch im Café Elite ausmacht.</p>
+    <p class="gallery-desc" data-de="Jede Aufnahme fängt einen Moment des Handwerks ein — den Dampf, den Aufguss, das stille Ritual, das jeden Besuch im Café Elite ausmacht." data-en="Each photograph captures a moment of craft — the steam, the pour, the quiet ritual that defines every visit to Café Elite." data-ru="Каждая фотография запечатлевает момент мастерства — пар, наливание, тихий ритуал, который определяет каждый визит в Café Elite.">Jede Aufnahme fängt einen Moment des Handwerks ein — den Dampf, den Aufguss, das stille Ritual, das jeden Besuch im Café Elite ausmacht.</p>
   </div>
   <div class="gallery-grid">
     <div class="gallery-item main"><img src="assets/stock-latte.jpg" alt="Latte art"/></div>
@@ -509,7 +511,7 @@
   <img class="quote-bg" src="assets/stock-beans2.jpg" alt=""/>
   <div class="quote-content">
     <div class="quote-rule"></div>
-    <p class="quote-text" data-de="&ldquo;Guter Kaffee ist ein Genuss. Großartiger Kaffee ist ein Ritual.&rdquo;" data-en="&ldquo;Good coffee is a pleasure. Great coffee is a ritual.&rdquo;">&ldquo;Guter Kaffee ist ein Genuss. Großartiger Kaffee ist ein Ritual.&rdquo;</p>
+    <p class="quote-text" data-de="&ldquo;Guter Kaffee ist ein Genuss. Großartiger Kaffee ist ein Ritual.&rdquo;" data-en="&ldquo;Good coffee is a pleasure. Great coffee is a ritual.&rdquo;" data-ru="«Хороший кофе — это удовольствие. Великолепный кофе — это ритуал.»">&ldquo;Guter Kaffee ist ein Genuss. Großartiger Kaffee ist ein Ritual.&rdquo;</p>
     <div class="quote-rule"></div>
     <p class="quote-attribution" style="margin-top:28px;">Café Elite — Mosbach</p>
   </div>
@@ -518,32 +520,32 @@
 <!-- ═══════════════ MENU ═══════════════ -->
 <section id="menu">
   <div class="menu-header">
-    <p class="section-label" data-de="Unsere Speisekarte" data-en="Our Menu">Unsere Speisekarte</p>
-    <h2 class="menu-headline" data-de="Mit Sorgfalt zubereitet." data-en="Crafted with care.">Mit Sorgfalt zubereitet.</h2>
+    <p class="section-label" data-de="Unsere Speisekarte" data-en="Our Menu" data-ru="Наше меню">Unsere Speisekarte</p>
+    <h2 class="menu-headline" data-de="Mit Sorgfalt zubereitet." data-en="Crafted with care." data-ru="Приготовлено с заботой.">Mit Sorgfalt zubereitet.</h2>
   </div>
   <div class="menu-grid">
     <div>
-      <h3 class="menu-col-title" data-de="Kaffee &amp; Getränke" data-en="Coffee &amp; Drinks">Kaffee &amp; Getränke</h3>
-      <div class="menu-item"><div><div class="menu-item-name">Espresso</div><div class="menu-item-desc" data-de="Single Origin, frisch gezogen" data-en="Single origin, pulled to order">Single Origin, frisch gezogen</div></div><div class="menu-item-price">€ 2,50</div></div>
-      <div class="menu-item"><div><div class="menu-item-name">Cappuccino</div><div class="menu-item-desc" data-de="Samtiger Milchschaum, perfekt ausbalanciert" data-en="Velvety microfoam, perfectly balanced">Samtiger Milchschaum, perfekt ausbalanciert</div></div><div class="menu-item-price">€ 3,50</div></div>
-      <div class="menu-item"><div><div class="menu-item-name">Café Latte</div><div class="menu-item-desc" data-de="Sanft, seidig, kunstvoll eingeschenkt" data-en="Smooth, silky, beautifully poured">Sanft, seidig, kunstvoll eingeschenkt</div></div><div class="menu-item-price">€ 4,00</div></div>
-      <div class="menu-item"><div><div class="menu-item-name">Flat White</div><div class="menu-item-desc" data-de="Ristretto-Basis, strukturierte Milch" data-en="Ristretto base, textured milk">Ristretto-Basis, strukturierte Milch</div></div><div class="menu-item-price">€ 3,80</div></div>
-      <div class="menu-item"><div><div class="menu-item-name">Cold Brew</div><div class="menu-item-desc" data-de="18 Stunden kalt extrahiert, auf Eis serviert" data-en="18-hour slow extraction, served over ice">18 Stunden kalt extrahiert, auf Eis serviert</div></div><div class="menu-item-price">€ 4,50</div></div>
-      <div class="menu-item"><div><div class="menu-item-name">Matcha Latte</div><div class="menu-item-desc" data-de="Zeremonielle Qualität, Hafer- oder Vollmilch" data-en="Ceremonial grade, oat or whole milk">Zeremonielle Qualität, Hafer- oder Vollmilch</div></div><div class="menu-item-price">€ 4,20</div></div>
-      <div class="menu-item"><div><div class="menu-item-name" data-de="Filterkaffee" data-en="Filter Coffee">Filterkaffee</div><div class="menu-item-desc" data-de="V60 oder Chemex, wechselnde Herkunft" data-en="V60 or Chemex, rotating origin">V60 oder Chemex, wechselnde Herkunft</div></div><div class="menu-item-price">€ 3,20</div></div>
+      <h3 class="menu-col-title" data-de="Kaffee &amp; Getränke" data-en="Coffee &amp; Drinks" data-ru="Кофе и напитки">Kaffee &amp; Getränke</h3>
+      <div class="menu-item"><div><div class="menu-item-name">Espresso</div><div class="menu-item-desc" data-de="Single Origin, frisch gezogen" data-en="Single origin, pulled to order" data-ru="Single Origin, свежесваренный">Single Origin, frisch gezogen</div></div><div class="menu-item-price">€ 2,50</div></div>
+      <div class="menu-item"><div><div class="menu-item-name">Cappuccino</div><div class="menu-item-desc" data-de="Samtiger Milchschaum, perfekt ausbalanciert" data-en="Velvety microfoam, perfectly balanced" data-ru="Бархатистая молочная пена, идеально сбалансированная">Samtiger Milchschaum, perfekt ausbalanciert</div></div><div class="menu-item-price">€ 3,50</div></div>
+      <div class="menu-item"><div><div class="menu-item-name">Café Latte</div><div class="menu-item-desc" data-de="Sanft, seidig, kunstvoll eingeschenkt" data-en="Smooth, silky, beautifully poured" data-ru="Нежный, шелковистый, искусно налитый">Sanft, seidig, kunstvoll eingeschenkt</div></div><div class="menu-item-price">€ 4,00</div></div>
+      <div class="menu-item"><div><div class="menu-item-name">Flat White</div><div class="menu-item-desc" data-de="Ristretto-Basis, strukturierte Milch" data-en="Ristretto base, textured milk" data-ru="Основа ристретто, структурированное молоко">Ristretto-Basis, strukturierte Milch</div></div><div class="menu-item-price">€ 3,80</div></div>
+      <div class="menu-item"><div><div class="menu-item-name">Cold Brew</div><div class="menu-item-desc" data-de="18 Stunden kalt extrahiert, auf Eis serviert" data-en="18-hour slow extraction, served over ice" data-ru="18-часовое холодное экстрагирование, подаётся со льдом">18 Stunden kalt extrahiert, auf Eis serviert</div></div><div class="menu-item-price">€ 4,50</div></div>
+      <div class="menu-item"><div><div class="menu-item-name">Matcha Latte</div><div class="menu-item-desc" data-de="Zeremonielle Qualität, Hafer- oder Vollmilch" data-en="Ceremonial grade, oat or whole milk" data-ru="Церемониальное качество, овсяное или цельное молоко">Zeremonielle Qualität, Hafer- oder Vollmilch</div></div><div class="menu-item-price">€ 4,20</div></div>
+      <div class="menu-item"><div><div class="menu-item-name" data-de="Filterkaffee" data-en="Filter Coffee" data-ru="Фильтр-кофе">Filterkaffee</div><div class="menu-item-desc" data-de="V60 oder Chemex, wechselnde Herkunft" data-en="V60 or Chemex, rotating origin" data-ru="V60 или Chemex, меняющееся происхождение">V60 oder Chemex, wechselnde Herkunft</div></div><div class="menu-item-price">€ 3,20</div></div>
     </div>
     <div>
-      <h3 class="menu-col-title" data-de="Speisen &amp; Gebäck" data-en="Food &amp; Pastries">Speisen &amp; Gebäck</h3>
-      <div class="menu-item"><div><div class="menu-item-name" data-de="Butter-Croissant" data-en="Butter Croissant">Butter-Croissant</div><div class="menu-item-desc" data-de="Jeden Morgen frisch gebacken" data-en="Baked fresh each morning">Jeden Morgen frisch gebacken</div></div><div class="menu-item-price">€ 2,80</div></div>
-      <div class="menu-item"><div><div class="menu-item-name">Avocado Toast</div><div class="menu-item-desc" data-de="Sauerteigbrot, Tomate, Chiliflocken" data-en="Sourdough, heirloom tomato, chilli flake">Sauerteigbrot, Tomate, Chiliflocken</div></div><div class="menu-item-price">€ 7,50</div></div>
-      <div class="menu-item"><div><div class="menu-item-name" data-de="Bananenbrot" data-en="Banana Bread">Bananenbrot</div><div class="menu-item-desc" data-de="Walnuss, Honigglasur, hausgemacht" data-en="Walnut, honey glaze, house made">Walnuss, Honigglasur, hausgemacht</div></div><div class="menu-item-price">€ 3,20</div></div>
-      <div class="menu-item"><div><div class="menu-item-name">Granola Bowl</div><div class="menu-item-desc" data-de="Saisonale Früchte, griechischer Joghurt, Honig" data-en="Seasonal fruit, Greek yogurt, honey">Saisonale Früchte, griechischer Joghurt, Honig</div></div><div class="menu-item-price">€ 6,50</div></div>
-      <div class="menu-item"><div><div class="menu-item-name">Pain au Chocolat</div><div class="menu-item-desc" data-de="Dunkle Valrhona-Schokolade, Blätterteig" data-en="Dark Valrhona chocolate, laminated dough">Dunkle Valrhona-Schokolade, Blätterteig</div></div><div class="menu-item-price">€ 3,40</div></div>
-      <div class="menu-item"><div><div class="menu-item-name" data-de="Quiche des Tages" data-en="Quiche du Jour">Quiche des Tages</div><div class="menu-item-desc" data-de="Wechselnde Füllung, fragen Sie Ihre Barista" data-en="Rotating seasonal filling, ask your barista">Wechselnde Füllung, fragen Sie Ihre Barista</div></div><div class="menu-item-price">€ 5,80</div></div>
-      <div class="menu-item"><div><div class="menu-item-name" data-de="Saisonaler Kuchen" data-en="Seasonal Cake">Saisonaler Kuchen</div><div class="menu-item-desc" data-de="Wechselt wöchentlich, immer einen Versuch wert" data-en="Changes weekly, always worth it">Wechselt wöchentlich, immer einen Versuch wert</div></div><div class="menu-item-price">€ 4,80</div></div>
+      <h3 class="menu-col-title" data-de="Speisen &amp; Gebäck" data-en="Food &amp; Pastries" data-ru="Еда и выпечка">Speisen &amp; Gebäck</h3>
+      <div class="menu-item"><div><div class="menu-item-name" data-de="Butter-Croissant" data-en="Butter Croissant" data-ru="Масляный круассан">Butter-Croissant</div><div class="menu-item-desc" data-de="Jeden Morgen frisch gebacken" data-en="Baked fresh each morning" data-ru="Свежая выпечка каждое утро">Jeden Morgen frisch gebacken</div></div><div class="menu-item-price">€ 2,80</div></div>
+      <div class="menu-item"><div><div class="menu-item-name">Avocado Toast</div><div class="menu-item-desc" data-de="Sauerteigbrot, Tomate, Chiliflocken" data-en="Sourdough, heirloom tomato, chilli flake" data-ru="Ржаной хлеб, помидор, хлопья чили">Sauerteigbrot, Tomate, Chiliflocken</div></div><div class="menu-item-price">€ 7,50</div></div>
+      <div class="menu-item"><div><div class="menu-item-name" data-de="Bananenbrot" data-en="Banana Bread" data-ru="Банановый хлеб">Bananenbrot</div><div class="menu-item-desc" data-de="Walnuss, Honigglasur, hausgemacht" data-en="Walnut, honey glaze, house made" data-ru="Грецкий орех, медовая глазурь, домашнее">Walnuss, Honigglasur, hausgemacht</div></div><div class="menu-item-price">€ 3,20</div></div>
+      <div class="menu-item"><div><div class="menu-item-name">Granola Bowl</div><div class="menu-item-desc" data-de="Saisonale Früchte, griechischer Joghurt, Honig" data-en="Seasonal fruit, Greek yogurt, honey" data-ru="Сезонные фрукты, греческий йогурт, мёд">Saisonale Früchte, griechischer Joghurt, Honig</div></div><div class="menu-item-price">€ 6,50</div></div>
+      <div class="menu-item"><div><div class="menu-item-name">Pain au Chocolat</div><div class="menu-item-desc" data-de="Dunkle Valrhona-Schokolade, Blätterteig" data-en="Dark Valrhona chocolate, laminated dough" data-ru="Тёмный шоколад Valrhona, слоёное тесто">Dunkle Valrhona-Schokolade, Blätterteig</div></div><div class="menu-item-price">€ 3,40</div></div>
+      <div class="menu-item"><div><div class="menu-item-name" data-de="Quiche des Tages" data-en="Quiche du Jour" data-ru="Киш дня">Quiche des Tages</div><div class="menu-item-desc" data-de="Wechselnde Füllung, fragen Sie Ihre Barista" data-en="Rotating seasonal filling, ask your barista" data-ru="Меняющаяся начинка, спросите у бариста">Wechselnde Füllung, fragen Sie Ihre Barista</div></div><div class="menu-item-price">€ 5,80</div></div>
+      <div class="menu-item"><div><div class="menu-item-name" data-de="Saisonaler Kuchen" data-en="Seasonal Cake" data-ru="Сезонный торт">Saisonaler Kuchen</div><div class="menu-item-desc" data-de="Wechselt wöchentlich, immer einen Versuch wert" data-en="Changes weekly, always worth it" data-ru="Меняется еженедельно, всегда стоит попробовать">Wechselt wöchentlich, immer einen Versuch wert</div></div><div class="menu-item-price">€ 4,80</div></div>
     </div>
   </div>
-  <p class="menu-note" data-de="Alle Artikel je nach Verfügbarkeit. Milchalternativen erhältlich. Allergeninformation auf Anfrage." data-en="All items subject to seasonal availability. Dairy alternatives available. Allergen info on request.">Alle Artikel je nach Verfügbarkeit. Milchalternativen erhältlich. Allergeninformation auf Anfrage.</p>
+  <p class="menu-note" data-de="Alle Artikel je nach Verfügbarkeit. Milchalternativen erhältlich. Allergeninformation auf Anfrage." data-en="All items subject to seasonal availability. Dairy alternatives available. Allergen info on request." data-ru="Все блюда в зависимости от сезонной доступности. Доступны альтернативы молоку. Информация об аллергенах по запросу.">Alle Artikel je nach Verfügbarkeit. Milchalternativen erhältlich. Allergeninformation auf Anfrage.</p>
 </section>
 
 <!-- ═══════════════ TEAM ═══════════════ -->
@@ -551,30 +553,30 @@
   <div class="team-bg" style="background-image:url('assets/stock-beans.jpg')"></div>
   <div class="team-inner">
     <div class="team-header">
-      <p class="section-label" data-de="Das Team" data-en="The Team">Das Team</p>
-      <h2 class="team-headline" data-de="Die Menschen hinter der Tasse." data-en="People behind the cup.">Die Menschen hinter der Tasse.</h2>
+      <p class="section-label" data-de="Das Team" data-en="The Team" data-ru="Команда">Das Team</p>
+      <h2 class="team-headline" data-de="Die Menschen hinter der Tasse." data-en="People behind the cup." data-ru="Люди за чашкой.">Die Menschen hinter der Tasse.</h2>
     </div>
     <div class="team-grid">
       <div class="team-card">
         <div class="team-portrait"><img src="assets/photo-team-manager.jpg" alt="Marco Bauer"/></div>
-        <p class="team-role" data-de="Küchenchef" data-en="Head Chef">Küchenchef</p>
+        <p class="team-role" data-de="Küchenchef" data-en="Head Chef" data-ru="Шеф-повар">Küchenchef</p>
         <h3 class="team-name">Marco Bauer</h3>
         <div class="team-divider"></div>
-        <p class="team-bio" data-de="15 Jahre in Spezialitätenküchen ganz Europas. Präzision aus der französischen Schule, Seele unverkennbar aus Mosbach." data-en="15 years in specialty kitchens across Europe. Precision rooted in French craft, soul unmistakably Mosbach.">15 Jahre in Spezialitätenküchen ganz Europas. Präzision aus der französischen Schule, Seele unverkennbar aus Mosbach.</p>
+        <p class="team-bio" data-de="15 Jahre in Spezialitätenküchen ganz Europas. Präzision aus der französischen Schule, Seele unverkennbar aus Mosbach." data-en="15 years in specialty kitchens across Europe. Precision rooted in French craft, soul unmistakably Mosbach." data-ru="15 лет на специализированных кухнях по всей Европе. Точность французской школы, душа неотличимо мосбахская.">15 Jahre in Spezialitätenküchen ganz Europas. Präzision aus der französischen Schule, Seele unverkennbar aus Mosbach.</p>
       </div>
       <div class="team-card">
         <div class="team-portrait"><img src="assets/photo-team-barista.jpg" alt="Lena Fischer"/></div>
-        <p class="team-role" data-de="Chefbarista" data-en="Head Barista">Chefbarista</p>
+        <p class="team-role" data-de="Chefbarista" data-en="Head Barista" data-ru="Главный бариста">Chefbarista</p>
         <h3 class="team-name">Lena Fischer</h3>
         <div class="team-divider"></div>
-        <p class="team-bio" data-de="SCA-zertifiziert, wettbewerbserprobt. Kaffee ist kein Getränk — er ist ein Gespräch zwischen Erzeuger, Röster und Barista." data-en="SCA-certified, competition-trained. Coffee is not a drink — it is a conversation between farmer, roaster, and barista.">SCA-zertifiziert, wettbewerbserprobt. Kaffee ist kein Getränk — er ist ein Gespräch zwischen Erzeuger, Röster und Barista.</p>
+        <p class="team-bio" data-de="SCA-zertifiziert, wettbewerbserprobt. Kaffee ist kein Getränk — er ist ein Gespräch zwischen Erzeuger, Röster und Barista." data-en="SCA-certified, competition-trained. Coffee is not a drink — it is a conversation between farmer, roaster, and barista." data-ru="Сертифицирован SCA, обучен на соревнованиях. Кофе — это не напиток — это разговор между фермером, обжарщиком и баристой.">SCA-zertifiziert, wettbewerbserprobt. Kaffee ist kein Getränk — er ist ein Gespräch zwischen Erzeuger, Röster und Barista.</p>
       </div>
       <div class="team-card">
         <div class="team-portrait"><img src="assets/photo-team-chef.jpg" alt="Sophie Müller"/></div>
-        <p class="team-role" data-de="Café-Managerin" data-en="Café Manager">Café-Managerin</p>
+        <p class="team-role" data-de="Café-Managerin" data-en="Café Manager" data-ru="Менеджер кафе">Café-Managerin</p>
         <h3 class="team-name">Sophie Müller</h3>
         <div class="team-divider"></div>
-        <p class="team-bio" data-de="Sophie hält den Rhythmus des Café Elite am Laufen — von der Öffnung um 7:30 Uhr bis zur herzlichen Verabschiedung des letzten Gastes." data-en="Sophie keeps the rhythm of Café Elite flowing — from opening the shutters at 7:30 to ensuring the last guest leaves with a smile.">Sophie hält den Rhythmus des Café Elite am Laufen — von der Öffnung um 7:30 Uhr bis zur herzlichen Verabschiedung des letzten Gastes.</p>
+        <p class="team-bio" data-de="Sophie hält den Rhythmus des Café Elite am Laufen — von der Öffnung um 7:30 Uhr bis zur herzlichen Verabschiedung des letzten Gastes." data-en="Sophie keeps the rhythm of Café Elite flowing — from opening the shutters at 7:30 to ensuring the last guest leaves with a smile." data-ru="Софи поддерживает ритм Café Elite — от открытия в 7:30 до тёплого прощания с последним гостем.">Sophie hält den Rhythmus des Café Elite am Laufen — von der Öffnung um 7:30 Uhr bis zur herzlichen Verabschiedung des letzten Gastes.</p>
       </div>
     </div>
   </div>
@@ -583,12 +585,12 @@
 <!-- ═══════════════ VISIT / RESERVATIONS ═══════════════ -->
 <section id="visit">
   <div class="visit-left">
-    <p class="section-label" data-de="Öffnungszeiten" data-en="Opening Hours">Öffnungszeiten</p>
-    <h2 class="visit-headline" data-de="Besuchen Sie uns." data-en="Visit us.">Besuchen Sie uns.</h2>
+    <p class="section-label" data-de="Öffnungszeiten" data-en="Opening Hours" data-ru="Часы работы">Öffnungszeiten</p>
+    <h2 class="visit-headline" data-de="Besuchen Sie uns." data-en="Visit us." data-ru="Посетите нас.">Besuchen Sie uns.</h2>
     <div class="hours-table">
-      <div class="hours-row"><span class="hours-day" data-de="Montag – Freitag" data-en="Monday – Friday">Montag – Freitag</span><span class="hours-time">7:30 – 18:00</span></div>
-      <div class="hours-row"><span class="hours-day" data-de="Samstag" data-en="Saturday">Samstag</span><span class="hours-time">8:00 – 17:00</span></div>
-      <div class="hours-row"><span class="hours-day" data-de="Sonntag" data-en="Sunday">Sonntag</span><span class="hours-time">9:00 – 15:00</span></div>
+      <div class="hours-row"><span class="hours-day" data-de="Montag – Freitag" data-en="Monday – Friday" data-ru="Понедельник – Пятница">Montag – Freitag</span><span class="hours-time">7:30 – 18:00</span></div>
+      <div class="hours-row"><span class="hours-day" data-de="Samstag" data-en="Saturday" data-ru="Суббота">Samstag</span><span class="hours-time">8:00 – 17:00</span></div>
+      <div class="hours-row"><span class="hours-day" data-de="Sonntag" data-en="Sunday" data-ru="Воскресенье">Sonntag</span><span class="hours-time">9:00 – 15:00</span></div>
     </div>
     <div class="contact-list">
       <div class="contact-item"><div class="contact-dot"></div><p>Gartenweg 20, 74821 Mosbach</p></div>
@@ -597,15 +599,15 @@
     </div>
   </div>
   <div class="visit-right">
-    <p class="section-label" data-de="Reservierungen" data-en="Reservations">Reservierungen</p>
-    <h3 class="res-headline" data-de="Reservieren Sie Ihren Tisch." data-en="Reserve your table.">Reservieren Sie Ihren Tisch.</h3>
-    <p class="res-body" data-de="Für Gruppen ab 6 Personen empfehlen wir eine Voranmeldung. Rufen Sie uns an oder schreiben Sie uns — wir melden uns innerhalb einer Stunde." data-en="For groups of 6 or more, we recommend booking in advance. Call us directly or send a message — we will be in touch within the hour.">Für Gruppen ab 6 Personen empfehlen wir eine Voranmeldung. Rufen Sie uns an oder schreiben Sie uns — wir melden uns innerhalb einer Stunde.</p>
+    <p class="section-label" data-de="Reservierungen" data-en="Reservations" data-ru="Бронирование">Reservierungen</p>
+    <h3 class="res-headline" data-de="Reservieren Sie Ihren Tisch." data-en="Reserve your table." data-ru="Забронируйте свой стол.">Reservieren Sie Ihren Tisch.</h3>
+    <p class="res-body" data-de="Für Gruppen ab 6 Personen empfehlen wir eine Voranmeldung. Rufen Sie uns an oder schreiben Sie uns — wir melden uns innerhalb einer Stunde." data-en="For groups of 6 or more, we recommend booking in advance. Call us directly or send a message — we will be in touch within the hour." data-ru="Для групп от 6 человек мы рекомендуем предварительное бронирование. Позвоните нам или напишите — мы ответим в течение часа.">Für Gruppen ab 6 Personen empfehlen wir eine Voranmeldung. Rufen Sie uns an oder schreiben Sie uns — wir melden uns innerhalb einer Stunde.</p>
     <form class="form" id="reservation-form" onsubmit="return false">
-      <input type="text"  id="res-name"    data-placeholder-de="Ihr Name"        data-placeholder-en="Your name"      placeholder="Ihr Name"/>
-      <input type="email" id="res-email"   data-placeholder-de="E-Mail-Adresse"  data-placeholder-en="Email address"  placeholder="E-Mail-Adresse"/>
+      <input type="text"  id="res-name"    data-placeholder-de="Ihr Name"        data-placeholder-en="Your name"      data-placeholder-ru="Ваше имя"               placeholder="Ihr Name"/>
+      <input type="email" id="res-email"   data-placeholder-de="E-Mail-Adresse"  data-placeholder-en="Email address"  data-placeholder-ru="Адрес электронной почты" placeholder="E-Mail-Adresse"/>
       <div class="form-row">
         <input type="date" id="res-date" style="color:#1a0f0a;" />
-        <input type="number" id="res-party" data-placeholder-de="Personenanzahl" data-placeholder-en="Party size" placeholder="Personenanzahl" min="1" max="32"/>
+        <input type="number" id="res-party" data-placeholder-de="Personenanzahl" data-placeholder-en="Party size" data-placeholder-ru="Количество гостей" placeholder="Personenanzahl" min="1" max="32"/>
       </div>
 
       <!-- Slot picker — shown after date + party are filled -->
@@ -615,9 +617,9 @@
         <input type="hidden" id="res-time"/>
       </div>
 
-      <textarea id="res-message" data-placeholder-de="Besondere Wünsche" data-placeholder-en="Special requests" placeholder="Besondere Wünsche"></textarea>
+      <textarea id="res-message" data-placeholder-de="Besondere Wünsche" data-placeholder-en="Special requests" data-placeholder-ru="Особые пожелания" placeholder="Besondere Wünsche"></textarea>
       <button class="btn-submit" type="submit" id="res-submit">
-        <span data-de="Reservierung anfragen" data-en="Request reservation">Reservierung anfragen</span>
+        <span data-de="Reservierung anfragen" data-en="Request reservation" data-ru="Запросить бронирование">Reservierung anfragen</span>
         <span>→</span>
       </button>
     </form>
@@ -628,13 +630,13 @@
 <section id="map">
   <div class="map-header">
     <div>
-      <p class="section-label" data-de="So finden Sie uns" data-en="Find Us">So finden Sie uns</p>
+      <p class="section-label" data-de="So finden Sie uns" data-en="Find Us" data-ru="Как нас найти">So finden Sie uns</p>
       <h2 class="map-headline">Gartenweg 20,<br>Mosbach.</h2>
     </div>
     <div class="map-aside">
-      <p data-de="5 Gehminuten vom Bahnhof Mosbach" data-en="5 min walk from Mosbach Bahnhof">5 Gehminuten vom Bahnhof Mosbach</p>
-      <p data-de="Ausreichend Parkplätze am Gartenweg" data-en="Ample parking on Gartenweg">Ausreichend Parkplätze am Gartenweg</p>
-      <p data-de="Buslinien 731, 744 in der Nähe" data-en="Bus lines 731, 744 stop nearby">Buslinien 731, 744 in der Nähe</p>
+      <p data-de="5 Gehminuten vom Bahnhof Mosbach" data-en="5 min walk from Mosbach Bahnhof" data-ru="5 минут пешком от вокзала Мосбах">5 Gehminuten vom Bahnhof Mosbach</p>
+      <p data-de="Ausreichend Parkplätze am Gartenweg" data-en="Ample parking on Gartenweg" data-ru="Достаточно парковочных мест на Гартенвег">Ausreichend Parkplätze am Gartenweg</p>
+      <p data-de="Buslinien 731, 744 in der Nähe" data-en="Bus lines 731, 744 stop nearby" data-ru="Автобусные маршруты 731, 744 поблизости">Buslinien 731, 744 in der Nähe</p>
     </div>
   </div>
   <div class="map-embed">
@@ -651,7 +653,7 @@
     <div class="footer-brand">
       <p>Café</p>
       <p class="accent">Elite</p>
-      <p class="footer-tagline" data-de="Specialty Coffee, mit Leidenschaft zubereitet. Mosbachs feinste Adresse seit 2019." data-en="Specialty coffee, crafted with intention. Mosbach's finest since 2019.">Specialty Coffee, mit Leidenschaft zubereitet. Mosbachs feinste Adresse seit 2019.</p>
+      <p class="footer-tagline" data-de="Specialty Coffee, mit Leidenschaft zubereitet. Mosbachs feinste Adresse seit 2019." data-en="Specialty coffee, crafted with intention. Mosbach's finest since 2019." data-ru="Specialty Coffee, приготовленный с любовью. Лучшее заведение Мосбаха с 2019 года.">Specialty Coffee, mit Leidenschaft zubereitet. Mosbachs feinste Adresse seit 2019.</p>
       <div class="footer-social">
         <a href="#" class="social-btn">IG</a>
         <a href="#" class="social-btn">FB</a>
@@ -659,25 +661,25 @@
       </div>
     </div>
     <div>
-      <p class="footer-col-title" data-de="Navigation" data-en="Navigate">Navigation</p>
+      <p class="footer-col-title" data-de="Navigation" data-en="Navigate" data-ru="Навигация">Navigation</p>
       <div class="footer-links">
-        <a href="#about" data-de="Über uns" data-en="About">Über uns</a>
-        <a href="#menu" data-de="Speisekarte" data-en="Menu">Speisekarte</a>
-        <a href="#gallery" data-de="Galerie" data-en="Gallery">Galerie</a>
-        <a href="#team" data-de="Team" data-en="Team">Team</a>
-        <a href="#visit" data-de="Reservierungen" data-en="Reservations">Reservierungen</a>
+        <a href="#about" data-de="Über uns" data-en="About" data-ru="О нас">Über uns</a>
+        <a href="#menu" data-de="Speisekarte" data-en="Menu" data-ru="Меню">Speisekarte</a>
+        <a href="#gallery" data-de="Galerie" data-en="Gallery" data-ru="Галерея">Galerie</a>
+        <a href="#team" data-de="Team" data-en="Team" data-ru="Команда">Team</a>
+        <a href="#visit" data-de="Reservierungen" data-en="Reservations" data-ru="Бронирование">Reservierungen</a>
       </div>
     </div>
     <div>
-      <p class="footer-col-title" data-de="Öffnungszeiten" data-en="Hours">Öffnungszeiten</p>
+      <p class="footer-col-title" data-de="Öffnungszeiten" data-en="Hours" data-ru="Часы работы">Öffnungszeiten</p>
       <div class="footer-hours">
-        <div><p class="fh-day" data-de="Mo – Fr" data-en="Mon – Fri">Mo – Fr</p><p class="fh-time">7:30 – 18:00</p></div>
-        <div><p class="fh-day" data-de="Samstag" data-en="Saturday">Samstag</p><p class="fh-time">8:00 – 17:00</p></div>
-        <div><p class="fh-day" data-de="Sonntag" data-en="Sunday">Sonntag</p><p class="fh-time">9:00 – 15:00</p></div>
+        <div><p class="fh-day" data-de="Mo – Fr" data-en="Mon – Fri" data-ru="Пн – Пт">Mo – Fr</p><p class="fh-time">7:30 – 18:00</p></div>
+        <div><p class="fh-day" data-de="Samstag" data-en="Saturday" data-ru="Суббота">Samstag</p><p class="fh-time">8:00 – 17:00</p></div>
+        <div><p class="fh-day" data-de="Sonntag" data-en="Sunday" data-ru="Воскресенье">Sonntag</p><p class="fh-time">9:00 – 15:00</p></div>
       </div>
     </div>
     <div>
-      <p class="footer-col-title" data-de="Kontakt" data-en="Contact">Kontakt</p>
+      <p class="footer-col-title" data-de="Kontakt" data-en="Contact" data-ru="Контакт">Kontakt</p>
       <div class="footer-contact">
         <p>Gartenweg 20<br>74821 Mosbach</p>
         <p><a href="tel:+496261846582">06261 8465820</a></p>
@@ -687,8 +689,8 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <p data-de="© 2024 Café Elite · Alle Rechte vorbehalten" data-en="© 2024 Café Elite · All rights reserved">© 2024 Café Elite · Alle Rechte vorbehalten</p>
-    <p data-de="Mit Sorgfalt in Mosbach, Deutschland, kreiert" data-en="Crafted with care in Mosbach, Germany">Mit Sorgfalt in Mosbach, Deutschland, kreiert</p>
+    <p data-de="© 2024 Café Elite · Alle Rechte vorbehalten" data-en="© 2024 Café Elite · All rights reserved" data-ru="© 2024 Café Elite · Все права защищены">© 2024 Café Elite · Alle Rechte vorbehalten</p>
+    <p data-de="Mit Sorgfalt in Mosbach, Deutschland, kreiert" data-en="Crafted with care in Mosbach, Germany" data-ru="Создано с заботой в Мосбахе, Германия">Mit Sorgfalt in Mosbach, Deutschland, kreiert</p>
   </div>
 </footer>
 
@@ -719,12 +721,18 @@
   function setLang(lang) {
     currentLang = lang;
 
-    // Toggle button states
+    // Toggle button states — desktop
     document.getElementById('btn-de').classList.toggle('active', lang === 'de');
     document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    document.getElementById('btn-ru').classList.toggle('active', lang === 'ru');
 
-    // Update all elements with data-de / data-en attributes
-    document.querySelectorAll('[data-de], [data-en]').forEach(el => {
+    // Toggle button states — mobile drawer
+    document.getElementById('drawer-btn-de').classList.toggle('active', lang === 'de');
+    document.getElementById('drawer-btn-en').classList.toggle('active', lang === 'en');
+    document.getElementById('drawer-btn-ru').classList.toggle('active', lang === 'ru');
+
+    // Update all elements with data-de / data-en / data-ru attributes
+    document.querySelectorAll('[data-de], [data-en], [data-ru]').forEach(el => {
       const text = el.getAttribute('data-' + lang);
       if (!text) return;
       // Use innerHTML to support embedded tags like <br> and <em>
@@ -770,9 +778,13 @@
       slotFetchTimer = setTimeout(() => fetchSlots(date, party), 300);
     }
 
+    function t(de, en, ru) {
+      return currentLang === 'de' ? de : currentLang === 'ru' ? ru : en;
+    }
+
     async function fetchSlots(date, party) {
       slotWrap.style.display = 'block';
-      slotStatus.textContent = currentLang === 'de' ? 'Verfügbarkeit wird geladen…' : 'Loading availability…';
+      slotStatus.textContent = t('Verfügbarkeit wird geladen…', 'Loading availability…', 'Загрузка доступности…');
       slotGrid.innerHTML = '';
       timeHidden.value = '';
 
@@ -782,29 +794,35 @@
         if (!res.ok) throw new Error(`Server returned ${res.status}`);
         data = await res.json();
       } catch (err) {
-        slotStatus.textContent = currentLang === 'de'
-          ? 'Fehler beim Laden der Verfügbarkeit. Bitte starten Sie den Server neu.'
-          : 'Could not load availability. Make sure the server is running (node server/index.js).';
+        slotStatus.textContent = t(
+          'Fehler beim Laden der Verfügbarkeit. Bitte starten Sie den Server neu.',
+          'Could not load availability. Make sure the server is running (node server/index.js).',
+          'Не удалось загрузить доступность. Убедитесь, что сервер запущен.'
+        );
         console.error('Slots fetch error:', err);
         return;
       }
 
       if (!data.open) {
-        slotStatus.textContent = currentLang === 'de'
-          ? 'An diesem Tag haben wir leider geschlossen.'
-          : 'We are closed on this day.';
+        slotStatus.textContent = t(
+          'An diesem Tag haben wir leider geschlossen.',
+          'We are closed on this day.',
+          'В этот день мы, к сожалению, закрыты.'
+        );
         return;
       }
 
       const tablesNeeded = Math.ceil(party / 4);
       const available    = data.slots.filter(s => s.tablesLeft >= tablesNeeded);
 
-      slotStatus.textContent = currentLang === 'de'
-        ? `Öffnungszeiten: ${data.hours.open} – ${data.hours.close}`
-        : `Opening hours: ${data.hours.open} – ${data.hours.close}`;
+      slotStatus.textContent = t(
+        `Öffnungszeiten: ${data.hours.open} – ${data.hours.close}`,
+        `Opening hours: ${data.hours.open} – ${data.hours.close}`,
+        `Часы работы: ${data.hours.open} – ${data.hours.close}`
+      );
 
       if (!data.slots.length) {
-        slotGrid.innerHTML = `<p style="font-size:13px;color:#8b7355;">${currentLang === 'de' ? 'Keine Slots verfügbar.' : 'No slots available.'}</p>`;
+        slotGrid.innerHTML = `<p style="font-size:13px;color:#8b7355;">${t('Keine Slots verfügbar.', 'No slots available.', 'Нет доступных слотов.')}</p>`;
         return;
       }
 
@@ -816,8 +834,8 @@
         btn.textContent = slot.time;
         btn.disabled = !enough;
         btn.title = enough
-          ? (currentLang === 'de' ? 'Verfügbar' : 'Available')
-          : (currentLang === 'de' ? 'Ausgebucht' : 'Fully booked');
+          ? t('Verfügbar', 'Available', 'Доступно')
+          : t('Ausgebucht', 'Fully booked', 'Занято');
 
         btn.addEventListener('click', () => {
           document.querySelectorAll('.slot-btn').forEach(b => b.classList.remove('selected'));
@@ -831,9 +849,11 @@
       if (!available.length) {
         const note = document.createElement('p');
         note.style.cssText = 'font-size:13px;color:#8b7355;width:100%;margin-top:4px;';
-        note.textContent = currentLang === 'de'
-          ? 'Für diese Personenanzahl sind leider alle Tische belegt. Bitte wählen Sie einen anderen Tag.'
-          : 'No tables available for this party size. Please try a different date.';
+        note.textContent = t(
+          'Für diese Personenanzahl sind leider alle Tische belegt. Bitte wählen Sie einen anderen Tag.',
+          'No tables available for this party size. Please try a different date.',
+          'К сожалению, все столы заняты для такого количества гостей. Пожалуйста, выберите другой день.'
+        );
         slotGrid.appendChild(note);
       }
     }
@@ -854,11 +874,11 @@
       const message = document.getElementById('res-message').value.trim();
 
       if (!name || !email || !date || !party) {
-        alert(currentLang === 'de' ? 'Bitte füllen Sie alle Pflichtfelder aus.' : 'Please fill in all required fields.');
+        alert(t('Bitte füllen Sie alle Pflichtfelder aus.', 'Please fill in all required fields.', 'Пожалуйста, заполните все обязательные поля.'));
         return;
       }
       if (!time) {
-        alert(currentLang === 'de' ? 'Bitte wählen Sie eine Uhrzeit.' : 'Please select a time slot.');
+        alert(t('Bitte wählen Sie eine Uhrzeit.', 'Please select a time slot.', 'Пожалуйста, выберите время.'));
         return;
       }
 
@@ -874,14 +894,15 @@
       if (res.ok) {
         document.getElementById('reservation-form').innerHTML = `
           <div class="form-success">
-            <p>${currentLang === 'de' ? 'Reservierung bestätigt.' : 'Reservation confirmed.'}</p>
-            <p>${currentLang === 'de'
-              ? `Danke, ${name}. Wir freuen uns auf Ihren Besuch am ${date} um ${time} Uhr.`
-              : `Thank you, ${name}. We look forward to seeing you on ${date} at ${time}.`}
-            </p>
+            <p>${t('Reservierung bestätigt.', 'Reservation confirmed.', 'Бронирование подтверждено.')}</p>
+            <p>${t(
+              `Danke, ${name}. Wir freuen uns auf Ihren Besuch am ${date} um ${time} Uhr.`,
+              `Thank you, ${name}. We look forward to seeing you on ${date} at ${time}.`,
+              `Спасибо, ${name}. Ждём вас ${date} в ${time}.`
+            )}</p>
           </div>`;
       } else {
-        alert(data.message || (currentLang === 'de' ? 'Etwas ist schiefgelaufen.' : 'Something went wrong.'));
+        alert(data.message || t('Etwas ist schiefgelaufen.', 'Something went wrong.', 'Что-то пошло не так.'));
         btn.disabled = false;
       }
     });
